@@ -6,8 +6,10 @@ import math as m
 distance_threshold=0.06912
 
 
-frame=cv2.VideoCapture(0)
-
+frame=cv2.VideoCapture(0,cv2.CAP_DSHO)
+if not frame.isOpened():
+    print("❌ ERROR: Cannot open camera.")
+    exit()
 while True:
     ok,img=frame.read()
     if not ok or img is None:
