@@ -10,7 +10,9 @@ frame=cv2.VideoCapture(0)
 
 while True:
     ok,img=frame.read()
-    
+    if not ok or img is None:
+        print("failed to capture image from camera.")
+        break
     hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
 
     lower_yellow=np.array([20,100,100])
