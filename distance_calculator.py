@@ -6,7 +6,7 @@ import math as m
 distance_threshold=0.06912
 
 
-frame=cv2.VideoCapture(10)
+frame=cv2.VideoCapture(0)
 
 while True:
     ok,img=frame.read()
